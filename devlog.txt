@@ -1,4 +1,6 @@
-11/2/22 Shinji Kusakabe:
+11/2/22 
+
+Shinji Kusakabe:
 -Added information on how the database tables will look like
 -Separated sign up page in site map into multiple parts to make it easier to read
 and expanded on requirements and how those will be checked.
