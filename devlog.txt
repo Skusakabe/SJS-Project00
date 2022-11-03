@@ -6,3 +6,5 @@ and expanded on requirements and how those will be checked.
 and changed it so they could see the full story after adding to it.
 -Added information to the account creation page and process.
 -Expanded on how tags will work and how users can find stories.
+
+Sebastian: Created site map, added a few missing explanations.
