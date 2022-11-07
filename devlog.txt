@@ -31,6 +31,12 @@ and changed it so they could see the full story after adding to it.
 
 SebastianC -- 11/3/22
 --------------------------------------------------------------
-Created site map, added a few missing explanations.
+-Created site map, added a few missing explanations.
+--------------------------------------------------------------
+
+JefferyT -- 11/7/22
+--------------------------------------------------------------
+-Integrated work from K19
+-Created home.html and its basic layout
 --------------------------------------------------------------
 ==============================================================
