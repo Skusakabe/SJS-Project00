@@ -28,7 +28,7 @@ userpass['LittleTimmy'] = 'password123'
 def index():
     if 'username' in session:
         #go to main(response) page
-        return redirect(url_for('response'))
+        return redirect(url_for('home'))
     #go to login page
     return redirect(url_for('login'))
 
@@ -43,9 +43,9 @@ def login(): ## Maybe more methods will work in the /login root
         return render_template('login.html', error = "Username does not exist")
     return render_template('login.html')
 
-@app.route("/response", methods=['GET', 'POST'])
-def response():
-    return render_template( 'response.html' , username = session['username'])
+@app.route("/home", methods=['GET', 'POST'])
+def home():
+    return render_template( 'home.html' , username = session['username'])
 
 @app.route("/logout")
 def logout():
