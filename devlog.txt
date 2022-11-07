@@ -1,6 +1,24 @@
-11/2/22 
+SJS
+Shinji Kusakabe
+Jeffery Tang
+Sebastian Ching
+pd 8
+---------------------
+Collaborative storytelling website
 
-Shinji Kusakabe:
+
+ ______   ______   __   __   __       ______   _______     
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+ShinjiK -- 11/2/22:
 -Added information on how the database tables will look like
 -Separated sign up page in site map into multiple parts to make it easier to read
 and expanded on requirements and how those will be checked.
@@ -10,3 +28,4 @@ and changed it so they could see the full story after adding to it.
 -Expanded on how tags will work and how users can find stories.
 
 Sebastian: Created site map, added a few missing explanations.
+==============================================================
