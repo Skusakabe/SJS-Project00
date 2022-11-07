@@ -17,7 +17,7 @@ import csv
 '''
 
 DB_FILE = "website_information.db"
-db = sqlite3.connect(DB_FILE)
+db = sqlite3.connect(DB_FILE, check_same_thread = False)
 c = db.cursor()
 
 c.execute("CREATE TABLE IF NOT EXISTS account_information(username TEXT UNIQUE, password TEXT)")
@@ -28,9 +28,6 @@ latestupdate TEXT, totalupdates INTEGER, latestcontributor TEXT, latestupdatetim
 app = Flask(__name__)    #create Flask object
 
 app.secret_key = '77ad3ef4fbaf3d0cd0db350b92373f8aef6ec1843bffbef0626398d52be358cf'
-
-userpass = {}
-userpass['LittleTimmy'] = 'password123'
 
 @app.route("/")
 def index():
@@ -49,9 +46,9 @@ def login(): ## Maybe more methods will work in the /login root
             if request.form['password'] == c.execute("SELECT password from account_information WHERE username = '" + request.form['username'] + "';").fetchone()[0]:
                 session['username'] = request.form['username']
                 return redirect(url_for('index'))
-            return render_template('login.html', use = "LOGIN", error = "Password is incorrect")
-        return render_template('login.html', use = "LOGIN", error = "Username does not exist")
-    return render_template('login.html', use = "LOGIN")
+            return render_template('login.html', error = "Password is incorrect")
+        return render_template('login.html', error = "Username does not exist")
+    return render_template('login.html')
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -62,10 +59,9 @@ def register():
             if "|" not in request.form['password'] and len(request.form['password']) > 0:
                 c.execute("INSERT INTO account_information VALUES ('" + request.form['username'] + "', '" + request.form['password'] + "');")
                 return redirect(url_for('login'))
-            return render_template('login.html', use = "REGISTER", error = "Password contains invalid character '|' or is too short")
-        return render_template('login.html', use = "REGISTER", error = "Username already exists")            
-    return render_template('login.html', use = "REGISTER") # use login.html for register page, but change text on site
-#     return redirect(url_for('login'))
+            return render_template('register.html', error = "Password contains invalid character '|' or is too short")
+        return render_template('register.html', error = "Username already exists")            
+    return render_template('register.html')
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
