@@ -58,6 +58,7 @@ def register():
         if request.form['username'] not in names:
             if "|" not in request.form['password'] and len(request.form['password']) > 0:
                 c.execute("INSERT INTO account_information VALUES ('" + request.form['username'] + "', '" + request.form['password'] + "');")
+                db.commit()
                 return redirect(url_for('login'))
             return render_template('register.html', error = "Password contains invalid character '|' or is too short")
         return render_template('register.html', error = "Username already exists")            
@@ -76,3 +77,5 @@ if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True 
     app.run()
+    
+db.close();
