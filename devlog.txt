@@ -18,7 +18,8 @@ Collaborative storytelling website
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-ShinjiK -- 11/2/22:
+ShinjiK -- 11/2/22
+--------------------------------------------------------------
 -Added information on how the database tables will look like
 -Separated sign up page in site map into multiple parts to make it easier to read
 and expanded on requirements and how those will be checked.
@@ -26,6 +27,10 @@ and expanded on requirements and how those will be checked.
 and changed it so they could see the full story after adding to it.
 -Added information to the account creation page and process.
 -Expanded on how tags will work and how users can find stories.
+--------------------------------------------------------------
 
-Sebastian: Created site map, added a few missing explanations.
+SebastianC -- 11/3/22
+--------------------------------------------------------------
+Created site map, added a few missing explanations.
+--------------------------------------------------------------
 ==============================================================
