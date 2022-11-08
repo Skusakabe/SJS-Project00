@@ -20,7 +20,7 @@ Collaborative storytelling website
 
 ShinjiK -- 11/2/22
 --------------------------------------------------------------
--Added information on how the database tables will look like
+-Added information on how the database tables will look like.
 -Separated sign up page in site map into multiple parts to make it easier to read
 and expanded on requirements and how those will be checked.
 -Added more explainations to how we will make sure that a user can only edit a story once
@@ -38,5 +38,14 @@ JefferyT -- 11/7/22
 --------------------------------------------------------------
 -Integrated work from K19
 -Created home.html and its basic layout
+--------------------------------------------------------------
+
+ShinjiK -- 11/7/22
+--------------------------------------------------------------
+-Created register.html for creating new accounts.
+-Used sqlite3 and created the tables needed for the website.
+-Coded the login and register functions and made sure that they properly interact with
+the database to do their jobs.
+-Made sure the database changes remain, even after closing the app.
 --------------------------------------------------------------
 ==============================================================
