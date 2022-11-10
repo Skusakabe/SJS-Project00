@@ -52,5 +52,6 @@ the database to do their jobs.
 JefferyT -- 11/10/22
 --------------------------------------------------------------
 -Created hyperlink to return to login page from the registration page
+-Added text that says which page is which for login and register
 --------------------------------------------------------------
 ==============================================================
