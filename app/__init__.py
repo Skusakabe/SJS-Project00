@@ -72,7 +72,13 @@ def home():
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
-    
+
+@app.route("/create")
+def create():
+    if request.method == 'POST':
+        return
+    return "a"
+
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True 
