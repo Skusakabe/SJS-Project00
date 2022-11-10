@@ -79,6 +79,16 @@ def create():
         return
     return "a"
 
+@app.route("/nonfic")
+def nonfiction():
+    return render_template('nonfiction.html')
+
+@app.route("/horror")
+def horror():
+    return render_template('horror.html')
+
+
+
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True 
