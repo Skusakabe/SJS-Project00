@@ -48,4 +48,9 @@ ShinjiK -- 11/7/22
 the database to do their jobs.
 -Made sure the database changes remain, even after closing the app.
 --------------------------------------------------------------
+
+JefferyT -- 11/10/22
+--------------------------------------------------------------
+-Created hyperlink to return to login page from the registration page
+--------------------------------------------------------------
 ==============================================================
