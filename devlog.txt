@@ -72,5 +72,8 @@ with <textarea> for the user to write the story.
 JefferyT -- 11/13/22
 --------------------------------------------------------------
 -Created pages and routes for each genre
+-Used for loops to display titles of stories as a list on each genre page
+-Created back button on create page
+-Created stories to test app functionallity
 --------------------------------------------------------------
 ==============================================================

@@ -5,25 +5,23 @@
         Title(40 characters or less): <input type="text" name="title"> </br></br>
         
         Genre: </br>
+        <input type="radio" id="nonfic" name="tag" value="Nonfic">
+        <label for="horror">Non-fiction</label></br>
         <input type="radio" id="horror" name="tag" value="Horror">
         <label for="horror">Horror</label></br>
         <input type="radio" id="romance" name="tag" value="Romance">
         <label for="romance">Romance</label></br>
-        <input type="radio" id="tfantasy" name="tag" value="TraditionalFantasy">
-        <label for="tfantasy">Traditional Fantasy</label></br>
-        <input type="radio" id="comedy" name="tag" value="Comedy">
-        <label for="comedy">Comedy</label></br>
-        <input type="radio" id="mystery" name="tag" value="Mystery">
-        <label for="mystery">Mystery</label></br>
-        <input type="radio" id="scifi" name="tag" value="SciFi">
-        <label for="scifi">SciFi</label></br>
-        <input type="radio" id="drama" name="tag" value="Drama">
-        <label for="drama">Drama</label></br>
-        <input type="radio" id="realistic" name="tag" value="Realistic">
-        <label for="realistic">Realistic</label></br></br>
+        <input type="radio" id="fantasy" name="tag" value="Fantasy">
+        <label for="fantasy">Fantasy</label></br>
+        <input type="radio" id="educational" name="tag" value="Educational">
+        <label for="fantasy">Educational</label></br>
         
         Write your story:</br><textarea id="firststory" name="firststory" rows="35" cols="140"></textarea></br>
         <input type="submit" Value="Submit">
+    </form>
+
+    <form action="/home", method="post">
+      <a href="/home">back</a>
     </form>
   </body>
 </html>

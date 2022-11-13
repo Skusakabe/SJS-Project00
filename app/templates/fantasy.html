@@ -5,6 +5,10 @@
       Welcome to the Fantasy section!
     </h1>
     <form action="/fantasy", method="post">
+        {%for i in range(0, len)%}
+  
+            <li>{{h[i]}}</li>
+        {%endfor%}
     </form>
   </body>
 

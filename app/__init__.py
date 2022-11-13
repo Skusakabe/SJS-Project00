@@ -89,24 +89,69 @@ def create():
     return render_template('create.html')
 
 @app.route("/nonfic")
-def nonfiction():
-    return render_template('nonfiction.html')
+def nonfic():
+    storyinfotable = c.execute("SELECT * from story_list;").fetchall()
+    taglist = [index[1] for index in storyinfotable]
+    titlelist = [index[0] for index in storyinfotable]
+    h = []
+    num = 0
+    while num < len(taglist):
+        if taglist[num] == "Nonfic":
+            h.append(titlelist[num])
+        num += 1
+    return render_template('nonfic.html', len = len(h), h = h)
 
 @app.route("/horror")
 def horror():
-    return render_template('horror.html')
+    storyinfotable = c.execute("SELECT * from story_list;").fetchall()
+    taglist = [index[1] for index in storyinfotable]
+    titlelist = [index[0] for index in storyinfotable]
+    h = []
+    num = 0
+    while num < len(taglist):
+        if taglist[num] == "Horror":
+            h.append(titlelist[num])
+        num += 1
+    return render_template('horror.html', len = len(h), h = h)
 
 @app.route("/romance")
 def romance():
-    return render_template('romance.html')
+    storyinfotable = c.execute("SELECT * from story_list;").fetchall()
+    taglist = [index[1] for index in storyinfotable]
+    titlelist = [index[0] for index in storyinfotable]
+    h = []
+    num = 0
+    while num < len(taglist):
+        if taglist[num] == "Romance":
+            h.append(titlelist[num])
+        num += 1
+    return render_template('romance.html', len = len(h), h = h)
 
 @app.route("/fantasy")
 def fantasy():
-    return render_template('fantasy.html')
+    storyinfotable = c.execute("SELECT * from story_list;").fetchall()
+    taglist = [index[1] for index in storyinfotable]
+    titlelist = [index[0] for index in storyinfotable]
+    h = []
+    num = 0
+    while num < len(taglist):
+        if taglist[num] == "Fantasy":
+            h.append(titlelist[num])
+        num += 1
+    return render_template('fantasy.html', len = len(h), h = h)
 
 @app.route("/educational")
 def educational():
-    return render_template('educational.html')
+    storyinfotable = c.execute("SELECT * from story_list;").fetchall()
+    taglist = [index[1] for index in storyinfotable]
+    titlelist = [index[0] for index in storyinfotable]
+    h = []
+    num = 0
+    while num < len(taglist):
+        if taglist[num] == "Educational":
+            h.append(titlelist[num])
+        num += 1
+    return render_template('educational.html', len = len(h), h = h)
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified

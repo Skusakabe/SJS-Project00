@@ -1,0 +1,15 @@
+<html>
+
+  <body>
+    <h1>
+      Welcome to the Non-fiction section!
+    </h1>
+    <form action="/nonfiction", method="post">
+      {%for i in range(0, len)%}
+  
+        <li>{{h[i]}}</li>
+      {%endfor%}
+    </form>
+  </body>
+
+</html>
