@@ -96,7 +96,17 @@ def nonfiction():
 def horror():
     return render_template('horror.html')
 
+@app.route("/romance")
+def romance():
+    return render_template('romance.html')
 
+@app.route("/fantasy")
+def fantasy():
+    return render_template('fantasy.html')
+
+@app.route("/educational")
+def educational():
+    return render_template('educational.html')
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified

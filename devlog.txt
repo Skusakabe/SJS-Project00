@@ -68,4 +68,9 @@ ShinjiK -- 11/12/22
 -Used some more form options, like "radio" buttons for tags and a bigger textbox
 with <textarea> for the user to write the story.
 --------------------------------------------------------------
+
+JefferyT -- 11/13/22
+--------------------------------------------------------------
+-Created pages and routes for each genre
+--------------------------------------------------------------
 ==============================================================
