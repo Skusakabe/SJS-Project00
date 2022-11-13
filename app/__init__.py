@@ -67,7 +67,12 @@ def register():
 
 @app.route("/home", methods=['GET', 'POST'])
 def home():
-    return render_template( 'home.html' , username = session['username'])
+    storyinfotable = c.execute("SELECT * from story_list;").fetchall()
+    titlelist = [index[0] for index in storyinfotable]
+    h = []
+    for i in titlelist:
+        h.append(i)
+    return render_template('home.html', len = len(h), h = h, username = session['username'])
 
 @app.route("/logout")
 def logout():

@@ -25,7 +25,13 @@
         </h3>
 
         <h2>
-            Featured Stories:<br>
+            All Stories:<br>
+            <form action="/home", method="post">
+                {%for i in range(0, len)%}
+  
+                    <li>{{h[i]}}</li>
+                {%endfor%}
+            </form>
         </h2>
     </body>
 </html>
