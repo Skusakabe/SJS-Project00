@@ -22,7 +22,7 @@ c = db.cursor()
 
 c.execute("CREATE TABLE IF NOT EXISTS account_information(username TEXT UNIQUE, password TEXT)")
 c.execute("""CREATE TABLE IF NOT EXISTS story_list(storyname TEXT UNIQUE, tag TEXT, contributors TEXT, fullstory TEXT,
-latestupdate TEXT, totalupdates INTEGER, latestcontributor TEXT, latestupdatetime TEXT)""")
+latestupdate TEXT, totalupdates INTEGER, latestcontributor TEXT)""") # maybe add a "latestupdatetime TEXT" to the table.
 
 
 app = Flask(__name__)    #create Flask object
@@ -57,7 +57,8 @@ def register():
         names = [index[0] for index in namepasslist] #creates a list of just the names
         if request.form['username'] not in names:
             if "|" not in request.form['password'] and len(request.form['password']) > 0:
-                c.execute("INSERT INTO account_information VALUES ('" + request.form['username'] + "', '" + request.form['password'] + "');")
+                newacc = [request.form['username'], request.form['password']]
+                c.execute("INSERT INTO account_information VALUES (?, ?)", newacc)
                 db.commit()
                 return redirect(url_for('login'))
             return render_template('register.html', error = "Password contains invalid character '|' or is too short")
@@ -73,11 +74,19 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
 
-@app.route("/create")
+@app.route("/create", methods=['GET', 'POST'])
 def create():
     if request.method == 'POST':
-        return
-    return "a"
+        storyinfotable = c.execute("SELECT * from story_list;").fetchall()
+        titlelist = [index[0] for index in storyinfotable]
+        if len(request.form['title']) <= 40 and request.form['title'] not in titlelist:
+            toadd = [request.form['title'], request.form['tag'], session['username'], request.form['firststory'],
+                     request.form['firststory'], 1, session['username']]
+            c.execute("INSERT INTO story_list VALUES(?, ?, ?, ?, ?, ?, ?)", toadd)
+            db.commit()
+            return redirect(url_for('index'))
+        return render_template('create.html', error = "Title is above 40 characters or already exists")
+    return render_template('create.html')
 
 @app.route("/nonfic")
 def nonfiction():
