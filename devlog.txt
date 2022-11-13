@@ -55,4 +55,17 @@ JefferyT -- 11/10/22
 -Added text that says which page is which for login and register
 -Used pip freeze to make requirements.txt
 --------------------------------------------------------------
+
+ShinjiK -- 11/10/22
+--------------------------------------------------------------
+-Started working on the story creation page.
+-Changes/fixes and dealing with merge errors.
+--------------------------------------------------------------
+
+ShinjiK -- 11/12/22
+--------------------------------------------------------------
+-Finished story creation page and made it connect to the database and add to it.
+-Used some more form options, like "radio" buttons for tags and a bigger textbox
+with <textarea> for the user to write the story.
+--------------------------------------------------------------
 ==============================================================
