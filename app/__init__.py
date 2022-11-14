@@ -68,11 +68,20 @@ def register():
 @app.route("/home", methods=['GET', 'POST'])
 def home():
     storyinfotable = c.execute("SELECT * from story_list;").fetchall()
+    taglist = [index[1] for index in storyinfotable]
     titlelist = [index[0] for index in storyinfotable]
+    authorlist = [index[2] for index in storyinfotable]
+    storylist = [index[3] for index in storyinfotable]
     h = []
-    for i in titlelist:
-        h.append(i)
-    return render_template('home.html', len = len(h), h = h, username = session['username'])
+    a = []
+    s = []
+    num = 0
+    while num < len(taglist):
+        h.append(titlelist[num])
+        a.append(authorlist[num])
+        s.append(storylist[num])
+        num += 1
+    return render_template('home.html', len = len(h), h = h, a = a, s = s, username = session['username'])
 
 @app.route("/logout")
 def logout():
@@ -98,65 +107,95 @@ def nonfic():
     storyinfotable = c.execute("SELECT * from story_list;").fetchall()
     taglist = [index[1] for index in storyinfotable]
     titlelist = [index[0] for index in storyinfotable]
+    authorlist = [index[2] for index in storyinfotable]
+    storylist = [index[3] for index in storyinfotable]
     h = []
+    a = []
+    s = []
     num = 0
     while num < len(taglist):
         if taglist[num] == "Nonfic":
             h.append(titlelist[num])
+            a.append(authorlist[num])
+            s.append(storylist[num])
         num += 1
-    return render_template('nonfic.html', len = len(h), h = h)
+    return render_template('nonfic.html', len = len(h), h = h, a = a, s = s)
 
 @app.route("/horror")
 def horror():
     storyinfotable = c.execute("SELECT * from story_list;").fetchall()
     taglist = [index[1] for index in storyinfotable]
     titlelist = [index[0] for index in storyinfotable]
+    authorlist = [index[2] for index in storyinfotable]
+    storylist = [index[3] for index in storyinfotable]
     h = []
+    a = []
+    s = []
     num = 0
     while num < len(taglist):
         if taglist[num] == "Horror":
             h.append(titlelist[num])
+            a.append(authorlist[num])
+            s.append(storylist[num])
         num += 1
-    return render_template('horror.html', len = len(h), h = h)
+    return render_template('horror.html', len = len(h), h = h, a = a, s = s)
 
 @app.route("/romance")
 def romance():
     storyinfotable = c.execute("SELECT * from story_list;").fetchall()
     taglist = [index[1] for index in storyinfotable]
     titlelist = [index[0] for index in storyinfotable]
+    authorlist = [index[2] for index in storyinfotable]
+    storylist = [index[3] for index in storyinfotable]
     h = []
+    a = []
+    s = []
     num = 0
     while num < len(taglist):
         if taglist[num] == "Romance":
             h.append(titlelist[num])
+            a.append(authorlist[num])
+            s.append(storylist[num])
         num += 1
-    return render_template('romance.html', len = len(h), h = h)
+    return render_template('romance.html', len = len(h), h = h, a = a, s = s)
 
 @app.route("/fantasy")
 def fantasy():
     storyinfotable = c.execute("SELECT * from story_list;").fetchall()
     taglist = [index[1] for index in storyinfotable]
     titlelist = [index[0] for index in storyinfotable]
+    authorlist = [index[2] for index in storyinfotable]
+    storylist = [index[3] for index in storyinfotable]
     h = []
+    a = []
+    s = []
     num = 0
     while num < len(taglist):
         if taglist[num] == "Fantasy":
             h.append(titlelist[num])
+            a.append(authorlist[num])
+            s.append(storylist[num])
         num += 1
-    return render_template('fantasy.html', len = len(h), h = h)
+    return render_template('fantasy.html', len = len(h), h = h, a = a, s = s)
 
 @app.route("/educational")
 def educational():
     storyinfotable = c.execute("SELECT * from story_list;").fetchall()
     taglist = [index[1] for index in storyinfotable]
     titlelist = [index[0] for index in storyinfotable]
+    authorlist = [index[2] for index in storyinfotable]
+    storylist = [index[3] for index in storyinfotable]
     h = []
+    a = []
+    s = []
     num = 0
     while num < len(taglist):
         if taglist[num] == "Educational":
             h.append(titlelist[num])
+            a.append(authorlist[num])
+            s.append(storylist[num])
         num += 1
-    return render_template('educational.html', len = len(h), h = h)
+    return render_template('educational.html', len = len(h), h = h, a = a, s = s)
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified

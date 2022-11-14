@@ -77,5 +77,6 @@ and on the home page
 -Created back button on create page
 -Created stories to test app functionallity
 -Restored username display on home page
+-Made contents and author of each story display on home and genre pages
 --------------------------------------------------------------
 ==============================================================

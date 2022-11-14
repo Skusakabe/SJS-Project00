@@ -17,8 +17,14 @@ h1 {
     <form action="/nonfiction", method="post">
       {%for i in range(0, len)%}
   
-        <li>{{h[i]}}</li>
-      {%endfor%}
+        <h2>{{h[i]}} by {{a[i]}}</h2>
+        <form action="/edit", method="post">
+          <a href="/edit">Edit this story</a>
+        </form>
+        <p>
+          {{s[i]}}
+        </p>
+        {%endfor%}
     </form>
     <form action="/home", method="post">
       <a href="/home">Go back to home</a>

@@ -42,7 +42,13 @@ font-style: italic;
             <form action="/home", method="post">
                 {%for i in range(0, len)%}
   
-                    <li>{{h[i]}}</li>
+                <h2>{{h[i]}} by {{a[i]}}</h2>
+                <form action="/edit", method="post">
+                  <a href="/edit">Edit this story</a>
+                </form>
+                <p>
+                  {{s[i]}}
+                </p>
                 {%endfor%}
             </form>
         </h2>
