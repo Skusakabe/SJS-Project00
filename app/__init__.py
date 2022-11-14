@@ -22,7 +22,7 @@ c = db.cursor()
 
 c.execute("CREATE TABLE IF NOT EXISTS account_information(username TEXT UNIQUE, password TEXT)")
 c.execute("""CREATE TABLE IF NOT EXISTS story_list(storyname TEXT UNIQUE, tag TEXT, contributors TEXT, fullstory TEXT,
-latestupdate TEXT, totalupdates INTEGER, latestcontributor TEXT)""") # maybe add a "latestupdatetime TEXT" to the table.
+latestupdate TEXT, totalupdates INTEGER)""") # maybe add a "latestupdatetime TEXT" to the table.
 
 
 app = Flask(__name__)    #create Flask object
@@ -95,12 +95,38 @@ def create():
         titlelist = [index[0] for index in storyinfotable]
         if len(request.form['title']) <= 40 and request.form['title'] not in titlelist:
             toadd = [request.form['title'], request.form['tag'], session['username'], request.form['firststory'],
-                     request.form['firststory'], 1, session['username']]
-            c.execute("INSERT INTO story_list VALUES(?, ?, ?, ?, ?, ?, ?)", toadd)
+                     request.form['firststory'], 1]
+            c.execute("INSERT INTO story_list VALUES(?, ?, ?, ?, ?, ?)", toadd)
             db.commit()
             return redirect(url_for('index'))
         return render_template('create.html', error = "Title is above 40 characters or already exists")
     return render_template('create.html')
+
+@app.route("/add", methods=['GET', 'POST'])
+def add():
+    storyname = request.args['storyname']
+    fullstory = c.execute("SELECT fullstory from story_list WHERE storyname = '" + storyname + "';").fetchone()[0]
+    contributors = c.execute("SELECT contributors from story_list WHERE storyname = '" + storyname + "';").fetchone()[0]
+    totalupdates = c.execute("SELECT totalupdates from story_list WHERE storyname = '" + storyname + "';").fetchone()[0]
+    if request.method == 'POST':
+        newstuff = "UPDATE story_list " + "SET fullstory = '" + fullstory + " " + request.form['addition'] + "', contributors = '" + contributors + "+++" + session['username'] + "', latestupdate = '" + request.form['addition'] + "', totalupdates = " + str(totalupdates + 1) + " WHERE storyname = '" + storyname + "';"
+#         c.execute("UPDATE story_list")
+#         newstuff = "SET fullstory = '" + fullstory + " " + request.form['addition'] + "', contributors = '" + contributors + "+++" + session['username'] + "', latestupdate = '" + request.form['addition'] + "', totalupdates = " + str(totalupdates + 1)
+        c.execute(newstuff)
+#         c.execute("WHERE storyname = '" + storyname + "';")
+        db.commit()
+        return redirect(url_for('home'))
+    return render_template('add.html', title = storyname, showuser = c.execute("SELECT latestupdate from story_list WHERE storyname = '" + storyname + "';").fetchone()[0])
+    
+@app.route("/story", methods=['GET', 'POST'])
+def story():
+    storyname = request.args['storyname']
+    ver = str(c.execute("SELECT totalupdates from story_list WHERE storyname = '" + storyname + "';").fetchone()[0])
+    contributors = c.execute("SELECT contributors from story_list WHERE storyname = '" + storyname + "';").fetchone()[0]
+    if session["username"] in contributors: #split contributors later
+        return render_template('story.html', title = storyname, version = ver, showuser = c.execute("SELECT fullstory from story_list WHERE storyname = '" + storyname + "';").fetchone()[0])
+    return render_template('story.html', title = storyname, version = ver, addmessage = "Add to this story", showuser = c.execute("SELECT latestupdate from story_list WHERE storyname = '" + storyname + "';").fetchone()[0])
+
 
 @app.route("/nonfic")
 def nonfic():

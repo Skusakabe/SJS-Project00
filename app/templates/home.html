@@ -41,16 +41,10 @@ font-style: italic;
             All Stories:<br>
             <form action="/home", method="post">
                 {%for i in range(0, len)%}
-  
-                <h2>{{h[i]}} by {{a[i]}}</h2>
-                <form action="/edit", method="post">
-                  <a href="/edit">Edit this story</a>
-                </form>
-                <p>
-                  {{s[i]}}
-                </p>
+                <h2><a href="/story?storyname={{h[i]}}">{{h[i]}}</a></h2>
                 {%endfor%}
             </form>
         </h2>
+
     </body>
 </html>
