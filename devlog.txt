@@ -79,4 +79,11 @@ and on the home page
 -Restored username display on home page
 -Made contents and author of each story display on home and genre pages
 --------------------------------------------------------------
+
+SebastianC -- 11/13/22
+--------------------------------------------------------------
+-Worked on all sections for genre, added description and images.
+-Added return home hyperlink on the sections.
+-Did some minor changes/fixes to home page.
+--------------------------------------------------------------
 ==============================================================
