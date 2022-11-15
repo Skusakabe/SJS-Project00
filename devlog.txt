@@ -91,10 +91,6 @@ SebastianC -- 11/13/22
 -Worked on all sections for genre, added description and images.
 -Added return home hyperlink on the sections.
 -Did some minor changes/fixes to home page.
--Moved return home link to bottom left corner.
--Allowed for hyperlink on every genre to direct you to the story page.
--Did some basic organizing such as moving pictures, text, and etc. 
--Added the creator of the story after the title of the story. 
 --------------------------------------------------------------
 
 ShinjiK -- 11/14/22
@@ -110,5 +106,13 @@ JefferyT -- 11/14/22
 -Added back buttons on story viewing pages and on editing pages
 -Adjusted styling of text elements
 -Edited README.md to include more detailed lauch codes
+--------------------------------------------------------------
+
+SebastianC -- 11/14/22
+--------------------------------------------------------------
+-Moved return home link to bottom left corner.
+-Allowed for hyperlink on every genre to direct you to the story page.
+-Did some basic organizing such as moving pictures, text, and etc. 
+-Added the creator of the story after the title of the story. 
 --------------------------------------------------------------
 ==============================================================
