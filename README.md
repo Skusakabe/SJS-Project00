@@ -10,10 +10,27 @@ A web app that uses Python to integrate HTML, Flask, and SQLite to run a site. T
 allows users to log in, view stories, and contributes to stories they enjoy.
 
 ## Launch codes
-* Have Flask, Python, and SQLite3 installs
+* Have [Python](https://www.python.org/downloads/) installed
+* Create new environment, change directory into it, and activate it
+```
+python3 -m venv <<name>>
+cd <<name>>
+. bin/activate
+```
 * Clone github repository
-* run:
+```
+git clone <<repository>>
+```
+* View requirements.txt and pip install
+```
+pip install -r requirements.txt
+```
+* run in terminal:
 ```
 python3 __init__.py
 ```
 * open link in browser
+* When finished, deactivate the environment
+```
+deactivate
+```

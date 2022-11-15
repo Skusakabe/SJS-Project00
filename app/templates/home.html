@@ -17,20 +17,23 @@ font-style: italic;
         <p1>
             Hello {{username}}! Welcome to Storytellers! Here you will be able to not only read stories made by your peers, but actually have the capability to let your brain seep out and run wild with our collabortive story website. You're free to write anything you want and you have the option to select different genres as shown below. You also have the ability to create and change stories as shown under the Genre section.<br>
         </p1>
+        <br>
 
+        <p2>
         <form action="/logout", method="post">
             <a href="/logout">logout</a>
         </form>
+        </p2>
 
         <h2>
             Genres:<br>
         </h2>
         <p>
-            <a href="/nonfic">Non-fiction</a>
-            <a href="/horror">Horror</a>
-            <a href="/romance">Romance</a>
-            <a href="/fantasy">Fantasy</a>
-            <a href="/educational">Educational</a>
+            <li><a href="/nonfic">Non-fiction</a></li>
+            <li><a href="/horror">Horror</a></li>
+            <li><a href="/romance">Romance</a></li>
+            <li><a href="/fantasy">Fantasy</a></li>
+            <li><a href="/educational">Educational</a></li>
         </p>
 
         <h3>
@@ -39,12 +42,13 @@ font-style: italic;
 
         <h2>
             All Stories:<br>
+        </h2>
+        <p>
             <form action="/home", method="post">
                 {%for i in range(0, len)%}
-                <h2><a href="/story?storyname={{h[i]}}">{{h[i]}}</a> by {{a[i]}}</h2>
+                <li><a href="/story?storyname={{h[i]}}">{{h[i]}}</a> by {{a[i]}}</li><br>
                 {%endfor%}
             </form>
-        </h2>
-
+        </p>
     </body>
 </html>

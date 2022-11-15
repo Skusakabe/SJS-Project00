@@ -24,15 +24,14 @@ h1 {
     <form action="/educational", method="post">
         {%for i in range(0, len)%}
   <p>---------------------------------------------------------</p>
-        <h2>{{h[i]}} by {{a[i]}}</h2>
-        <form action="/edit", method="post">
-          <h2><a href="/story?storyname={{h[i]}}">{{h[i]}}</a></h2>
-        </form>
-        <p>
-          Story: {{s[i]}}
-        </p>
-        {%endfor%}
-    </form>
+  <form action="/edit", method="post"></form>
+  <h2><a href="/story?storyname={{h[i]}}">{{h[i]}}</a> by {{a[i]}}</h2>
+  </form>
+  <p>
+    Story: {{s[i]}}
+  </p>
+  {%endfor%}
+</form>
     <p>---------------------------------------------------------</p>
     <form action="/home", method="post">
       <div class="bottomleft"><a href="/home">Go back to home</a></div>
