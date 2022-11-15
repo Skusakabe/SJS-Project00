@@ -4,30 +4,38 @@ h1 {
         text-decoration: underline;
         font-style: italic;
 }
+
+.bottomleft {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 32px;
+}
 </style>
 
   <body>
-  <img align="right" src="https://p1.hiclipart.com/preview/879/26/460/child-reading-book-poster-cartoon-kid-wall-decal-education-facial-expression-yellow-text-png-clipart.jpg" width ="400" height ="350" />
+  <img style="border:5px double black; align="right" src="https://p1.hiclipart.com/preview/879/26/460/child-reading-book-poster-cartoon-kid-wall-decal-education-facial-expression-yellow-text-png-clipart.jpg" width ="400" height ="350" />
     <h1>
       Welcome to the Educational section!
     </h1>
-    <p>
+    <p style="font-family:verdana">
     Here you will see every single educational story posted from all users! We hope you enjoy!
     </p>
     <form action="/educational", method="post">
         {%for i in range(0, len)%}
-  
+  <p>---------------------------------------------------------</p>
         <h2>{{h[i]}} by {{a[i]}}</h2>
         <form action="/edit", method="post">
-          <a href="/edit">Edit this story</a>
+          <h2><a href="/story?storyname={{h[i]}}">{{h[i]}}</a></h2>
         </form>
         <p>
-          {{s[i]}}
+          Story: {{s[i]}}
         </p>
         {%endfor%}
     </form>
+    <p>---------------------------------------------------------</p>
     <form action="/home", method="post">
-      <a href="/home">Go back to home</a>
+      <div class="bottomleft"><a href="/home">Go back to home</a></div>
     </form>
   </body>
 

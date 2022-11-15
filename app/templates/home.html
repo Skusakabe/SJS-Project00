@@ -41,7 +41,7 @@ font-style: italic;
             All Stories:<br>
             <form action="/home", method="post">
                 {%for i in range(0, len)%}
-                <h2><a href="/story?storyname={{h[i]}}">{{h[i]}}</a></h2>
+                <h2><a href="/story?storyname={{h[i]}}">{{h[i]}}</a> by {{a[i]}}</h2>
                 {%endfor%}
             </form>
         </h2>
