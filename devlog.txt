@@ -97,11 +97,12 @@ SebastianC -- 11/13/22
 -Added the creator of the story after the title of the story. 
 --------------------------------------------------------------
 
-ShinjiK -- 11/12/22
+ShinjiK -- 11/14/22
 --------------------------------------------------------------
--Allowed for story viewing pages by GETing titles and creating story page template
--Added editing functionallity
--Prevents user from editing a story more than once
+-Allowed for story viewing pages by GETing titles and creating story page template.
+-Added editing functionallity.
+-Shows user the full story if they have edited it before, or the latest update if they haven't.
+-Prevents user from editing a story more than once.
 --------------------------------------------------------------
 
 JefferyT -- 11/14/22
