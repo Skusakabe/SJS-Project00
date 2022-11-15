@@ -122,7 +122,7 @@ def add():
 def story():
     storyname = request.args['storyname']
     ver = str(c.execute("SELECT totalupdates from story_list WHERE storyname = '" + storyname + "';").fetchone()[0])
-    contributors = c.execute("SELECT contributors from story_list WHERE storyname = '" + storyname + "';").fetchone()[0]
+    contributors = c.execute("SELECT contributors from story_list WHERE storyname = '" + storyname + "';").fetchone()[0].split("+++")
     if session["username"] in contributors: #split contributors later
         return render_template('story.html', title = storyname, version = ver, showuser = c.execute("SELECT fullstory from story_list WHERE storyname = '" + storyname + "';").fetchone()[0])
     return render_template('story.html', title = storyname, version = ver, addmessage = "Add to this story", showuser = c.execute("SELECT latestupdate from story_list WHERE storyname = '" + storyname + "';").fetchone()[0])
