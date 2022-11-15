@@ -62,6 +62,12 @@ ShinjiK -- 11/10/22
 -Changes/fixes and dealing with merge errors.
 --------------------------------------------------------------
 
+SebastianC -- 11/10/22
+--------------------------------------------------------------
+-Added a couple of the genre html files.
+-Added a basic route for the genres.
+--------------------------------------------------------------
+
 ShinjiK -- 11/12/22
 --------------------------------------------------------------
 -Finished story creation page and made it connect to the database and add to it.
@@ -85,5 +91,9 @@ SebastianC -- 11/13/22
 -Worked on all sections for genre, added description and images.
 -Added return home hyperlink on the sections.
 -Did some minor changes/fixes to home page.
+-Moved return home link to bottom left corner.
+-Allowed for hyperlink on every genre to direct you to the story page.
+-Did some basic organizing such as moving pictures, text, and etc. 
+-Added the creator of the story after the title of the story. 
 --------------------------------------------------------------
 ==============================================================
