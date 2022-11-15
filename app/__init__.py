@@ -55,14 +55,14 @@ def register():
     if request.method == 'POST':
         namepasslist = c.execute("SELECT * from account_information;").fetchall()
         names = [index[0] for index in namepasslist] #creates a list of just the names
-        if request.form['username'] not in names:
-            if "|" not in request.form['password'] and len(request.form['password']) > 0:
+        if request.form['username'] not in names and "+" not in request.form['username']:
+            if len(request.form['password']) > 0:
                 newacc = [request.form['username'], request.form['password']]
                 c.execute("INSERT INTO account_information VALUES (?, ?)", newacc)
                 db.commit()
                 return redirect(url_for('login'))
-            return render_template('register.html', error = "Password contains invalid character '|' or is too short")
-        return render_template('register.html', error = "Username already exists")            
+            return render_template('register.html', error = "Password is too short")
+        return render_template('register.html', error = "Username already exists or contains invalid character '+'")            
     return render_template('register.html')
 
 @app.route("/home", methods=['GET', 'POST'])
